@@ -51,7 +51,7 @@ export default function Footer() {
                         <ul className="space-y-2 text-sm text-slate-500">
                             <li>
                                 <a
-                                    href="https://github.com"
+                                    href="https://github.com/Hyperion3112/ai_demand_intelligence"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-slate-800 transition-colors inline-flex items-center gap-1"

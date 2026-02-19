@@ -45,7 +45,7 @@ export default function Home() {
               Explore Dashboards
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/Hyperion3112/ai_demand_intelligence"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-700 hover:text-slate-900 hover:border-slate-300 font-semibold shadow-sm transition-all hover:bg-slate-50"
@@ -258,7 +258,7 @@ export default function Home() {
               <h4 className="font-bold text-slate-900 mb-4 font-heading text-lg">Connect</h4>
               <div className="grid sm:grid-cols-2 gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Hyperion3112/ai_demand_intelligence"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all group"
