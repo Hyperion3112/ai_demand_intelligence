@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Demand & Adoption Intelligence (US)
 
-## Getting Started
+A Next.js website that showcases Tableau Public dashboards comparing AI tool demand across Coding, Image, and Video categories using Google Trends data.
 
-First, run the development server:
+## Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy to Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push this repository to GitHub.
+2. Go to [vercel.com](https://vercel.com) and click **New Project**.
+3. Import your GitHub repo.
+4. Click **Deploy** — no environment variables needed.
 
-## Learn More
+Or use the Vercel CLI:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx vercel
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout (navbar, footer, fonts, SEO metadata)
+│   ├── page.tsx            # Landing page with all sections
+│   ├── globals.css         # Global styles & Tailwind
+│   └── dashboards/
+│       └── [id]/
+│           └── page.tsx    # Individual dashboard pages (/dashboards/1, /2, /3)
+├── components/
+│   ├── TableauEmbed.tsx    # Reusable Tableau viz embed component
+│   ├── Navbar.tsx          # Sticky top navigation with anchor links
+│   ├── Footer.tsx          # Footer with links
+│   ├── BackToTop.tsx       # Floating back-to-top button
+│   └── SectionCard.tsx     # Reusable section card wrapper
+└── lib/
+    └── dashboards.ts       # Dashboard data, metrics glossary, key insights
+```
 
-## Deploy on Vercel
+## Editing Content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Dashboard Embeds
+Edit `src/lib/dashboards.ts` — each dashboard object has:
+- `embedHtml`: raw Tableau embed HTML string
+- `tableauUrl`: direct link to Tableau Public
+- `title`, `purpose`, `howToUse`: displayed text
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Metrics & Insights
+Also in `src/lib/dashboards.ts`:
+- `METRICS_GLOSSARY`: array of `{ term, definition }` objects
+- `KEY_INSIGHTS`: array of insight strings
+
+### Links (GitHub / LinkedIn / Tableau Public)
+Search for placeholder URLs (`https://github.com`, `https://linkedin.com`, `https://public.tableau.com`) in:
+- `src/app/page.tsx` (hero CTA buttons, about section)
+- `src/components/Footer.tsx`
+
+## Tech Stack
+
+- **Next.js 14+** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Tableau JS API** (loaded at runtime for dashboard embeds)
+
+## License
+
+MIT
